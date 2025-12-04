@@ -116,6 +116,25 @@
             color: #fff;
         }
 
+        /* BUTON STİLİ (Archive Linki İçin) */
+        .archive-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .archive-btn:hover {
+            background: rgba(56, 189, 248, 0.1);
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+        }
+
         footer {
             text-align: center;
             padding: 40px;
@@ -132,13 +151,13 @@
 
     <div class="container">
         <header>
-            <h1>simaniac<span class="badge">Archive</span></h1>
+            <h1>SiManiac<span class="badge">Archive</span></h1>
             <p style="opacity: 0.7; margin-top: 15px; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">EST. 2004</p>
         </header>
 
         <div class="intro-text">
             <p>
-                Bir zamanlar burada, piksellerden hayaller inşa eder, sanal karakterlere kusursuz hayatlar kurardık. O günlerin çocukları büyüdü, ekran başından kalkıp kendi gerçek hikayelerini yazmaya gitti. Hepimiz değiştik, hepimiz dağıldık; ama Simaniac, gençliğimizin o masum neşesini saklayan bir zaman kapsülü olarak eve döndü.
+                Bir zamanlar burada, piksellerden hayaller inşa eder, sanal karakterlere kusursuz hayatlar kurardık. O günlerin çocukları büyüdü, ekran başından kalkıp kendi gerçek hikayelerini yazmaya gitti. Hepimiz değiştik, hepimiz dağıldık; ama SiManiac, gençliğimizin o masum neşesini saklayan bir zaman kapsülü olarak eve döndü.
             </p>
             <p style="text-align: right; margin-top: 30px; font-weight: bold; color: var(--accent-color);"><em>— EzerchE (Founder)</em></p>
         </div>
@@ -158,6 +177,12 @@
             <p>
                 Yıllar sonra bu domain tekrar evine döndü. Şimdilik burası eski günlerin anısına dikilmiş sessiz bir anıt.
             </p>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://web.archive.org/web/20070101000000*/simaniac.com" target="_blank" class="archive-btn">
+                    ⌛ Geçmişe Yolculuk (Web Archive)
+                </a>
+            </div>
         </div>
 
         <div class="content-card" id="guestbook">
@@ -168,7 +193,6 @@
             
             <div id="disqus_thread"></div>
             <script>
-
                 var disqus_config = function () {
                     this.page.url = "https://simaniac.com";  
                     this.page.identifier = "simaniac-archive-home"; 
@@ -176,15 +200,13 @@
                 
                 (function() { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
-                    
                     s.src = 'https://simaniac.disqus.com/embed.js'; 
-                    
                     s.setAttribute('data-timestamp', +new Date());
                     (d.head || d.body).appendChild(s);
                 })();
             </script>
             <noscript>Yorumları görmek için JavaScript'i etkinleştirin.</noscript>
-            </div>
+        </div>
     </div>
 
     <footer>
