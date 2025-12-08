@@ -47,44 +47,40 @@
             letter-spacing: -2px;
             color: #fff;
             font-weight: 800;
-            /* Logo ve badge'in aynı hizada durması için */
             display: inline-flex;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        /* --- YENİ LOGO CSS --- */
+        /* --- LOGO CSS (Plumbob 'i') - HİZALAMA DÜZELTİLDİ --- */
         .custom-i {
             display: inline-flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-end;
             position: relative;
-            margin: 0 -0.02em; /* Harfler arası boşluğu sıkılaştırır */
-            top: 0.1em; /* Hizalama ayarı */
+            margin: 0 -0.02em;
+            /* Aşağıdaki değer harfi yukarı kaldırır */
+            top: -0.08em; 
         }
 
         .i-stem {
-            /* Noktasız 'ı' harfi kullanıyoruz */
             font-style: normal;
             line-height: 1;
         }
 
         .plumbob-dot {
-            /* Elmasın boyutu */
             width: 0.45em;
             height: 0.7em;
-            margin-bottom: 0.15em; /* Gövde ile elmas arası boşluk */
-            /* SVG ile mavi elmas çizimi */
+            /* Nokta ile gövde arası boşluk biraz azaltıldı */
+            margin-bottom: 0.1em;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100'%3E%3Cpath d='M25 0 L50 50 L25 100 L0 50 Z' fill='%2338bdf8' /%3E%3C/svg%3E");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
-            /* Parlama Efekti */
             filter: drop-shadow(0 0 8px var(--accent-color));
         }
-        /* -------------------- */
 
         .badge {
             background: linear-gradient(45deg, var(--accent-color), var(--quote-border));
@@ -95,12 +91,11 @@
             font-weight: bold;
             margin-left: 15px;
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
-            /* Badge'in dikey hizalaması */
             position: relative;
             top: -0.1em;
         }
 
-        /* BİZİM YAZIMIZ (GİRİŞ) */
+        /* METİN STİLLERİ */
         .intro-text {
             font-size: 1.2rem;
             color: #cbd5e1;
@@ -109,7 +104,6 @@
             text-align: justify;
         }
 
-        /* THOREAU ALINTI KUTUSU */
         .quote-box {
             text-align: center;
             margin: 0 0 60px 0;
@@ -137,7 +131,6 @@
             letter-spacing: 1px;
         }
 
-        /* İÇERİK KUTULARI */
         .content-card {
             background: var(--card-bg);
             padding: 40px;
@@ -156,7 +149,6 @@
             color: #fff;
         }
 
-        /* BUTON STİLİ (Archive Linki İçin) */
         .archive-btn {
             display: inline-block;
             margin-top: 20px;
@@ -198,7 +190,6 @@
                 </span>Maniac
                 <span class="badge">Archive</span>
             </h1>
-            
             <p style="opacity: 0.7; margin-top: 15px; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">EST. 2004</p>
         </header>
 
@@ -211,15 +202,15 @@
 
         <div class="quote-box">
             <span class="quote-text">
-                "Eğer hayallerini gökyüzüne kurduysan, emeğin boşa gitmiş sayılmaz; onlar zaten orada olmalıydı. Şimdi sen, onların altına temellerini at."
+                "If you have built castles in the air, your work need not be lost; that is where they should be. Now put the foundations under them."
             </span>
-            <span class="quote-author">— Henry David Thoreau</span>
+            <span class="quote-author">— Henry David Thoreau, Walden or, Life in the Woods</span>
         </div>
 
         <div class="content-card">
             <h2>Hakkında</h2>
             <p>
-                SiManiac, 2004 yılında The Sims tutkunu binlerce insanı bir araya getiren, 25.000 üyeye ulaşmış devasa bir aileydi. 2007'deki vedanın ardından site dijital boşlukta kayboldu.
+                SiManiac, 2004 yılında The Sims tutkunu binlerce insanı bir araya getiren, 30.000 üyeye ulaşmış devasa bir aileydi. 2007'deki vedanın ardından site dijital boşlukta kayboldu.
             </p>
             <p>
                 Yıllar sonra bu domain tekrar evine döndü. Şimdilik burası eski günlerin anısına dikilmiş sessiz bir anıt.
@@ -235,7 +226,7 @@
         <div class="content-card" id="guestbook">
             <h2>Anı Defteri</h2>
             <p style="font-size: 1rem; opacity: 0.8; margin-bottom: 30px;">
-                Eskiden buralarda mıydın? Bir not bırak, belki eski bir dostunla karşılaşırsın. (Mesajlar moderatör onayından sonra yayınlanır.)
+                Eskiden buralarda mıydın? Bir not bırak, belki eski bir dostunla karşılaşırsın.
             </p>
             
             <div id="disqus_thread"></div>
@@ -247,6 +238,7 @@
                 
                 (function() { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
+                    /* --- BURAYA DISQUS SHORTNAME GELECEK --- */
                     s.src = 'https://simaniac.disqus.com/embed.js'; 
                     s.setAttribute('data-timestamp', +new Date());
                     (d.head || d.body).appendChild(s);
