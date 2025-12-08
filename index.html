@@ -4,51 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO: Ana Başlık (Brand + Anahtar Kelime) -->
-    <title>SiManiac - Türkiye'nin Efsanevi The Sims Topluluğu ve Arşivi (2004)</title>
+    <!-- SEO: Ana Başlık (Marka + Otorite + Tarih) -->
+    <title>SiManiac - The Sims Türkiye Arşivi ve Topluluğu (2004-2025)</title>
     
-    <!-- SEO: Açıklama (Google'da başlığın altında çıkan yazı) -->
-    <meta name="description" content="2004 yılında kurulan Türkiye'nin en büyük The Sims platformu SiManiac, 18 yıl sonra orijinal kurucusu tarafından dijital bir anıt ve arşiv olarak geri döndü. Sims tarihi, nostalji ve topluluk.">
+    <!-- SEO: Gelişmiş Açıklama (CTR Odaklı) -->
+    <meta name="description" content="2004 yılında kurulan Türkiye'nin efsanevi The Sims platformu SiManiac, 18 yıl sonra kurucusu EzerchE tarafından dijital bir müze ve arşiv olarak geri döndü. Sims tarihi ve nostalji.">
     
-    <!-- SEO: Anahtar Kelimeler (Google az kullanır ama diğer botlar için iyidir) -->
-    <meta name="keywords" content="Simaniac, The Sims, Sims Türkiye, Simaniac Arşiv, Sims Forum, EzerchE, Sims 2, Sims Tarihi, Nostalji">
+    <!-- SEO: Genişletilmiş Anahtar Kelimeler -->
+    <meta name="keywords" content="Simaniac, The Sims, Sims Türkiye, Simaniac Arşiv, Sims Forum, EzerchE, Sims 2, Sims 3, Sims 4, Project Rene, Nostalji, Dijital Müze">
     
-    <!-- SEO: Robotlara İzin Ver (Kritik: Domain geçmişi kötü olduğu için bu komut şart) -->
-    <meta name="robots" content="index, follow">
+    <!-- SEO: Yazar ve Sahiplik -->
+    <meta name="author" content="Gürkan 'EzerchE'">
+    <meta name="copyright" content="SiManiac Archive">
     
-    <!-- SEO: Otoriteyi Belirle (Canonical) -->
+    <!-- SEO: Kritik İzinler (Google Botları İçin Tam Erişim) -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- SEO: Otoriteyi Belirle (Canonical - GSC Hatasını Çözer) -->
     <link rel="canonical" href="https://www.simaniac.com/">
     
-    <!-- SOCIAL: Open Graph (Twitter/Facebook/WhatsApp paylaşım önizlemeleri) -->
+    <!-- SOCIAL: Open Graph (Görsel Paylaşım Sinyalleri) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.simaniac.com/">
     <meta property="og:title" content="SiManiac - The Sims Efsanesi Eve Döndü">
     <meta property="og:description" content="2004'te kurulan efsanevi Sims topluluğu SiManiac, 18 yıl sonra dijital bir anıt olarak yayında.">
     <meta property="og:site_name" content="SiManiac Archive">
     <meta property="og:locale" content="tr_TR">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SiManiac Geri Döndü">
+    <meta name="twitter:description" content="Türkiye'nin en köklü The Sims topluluğu SiManiac.com, dijital arşiv olarak yayında.">
 
-    <!-- SCHEMA.ORG: Google'a Sitenin Kimliğini Anlatan Yapısal Veri -->
+    <!-- SCHEMA.ORG: Gelişmiş Yapısal Veri (Google'a Güven Sinyali) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "SiManiac",
-      "alternateName": ["SiManiac Türkiye", "Simaniac Archive"],
-      "url": "https://www.simaniac.com/",
-      "foundingDate": "2004",
-      "founder": {
-        "@type": "Person",
-        "name": "EzerchE",
-        "alternateName": "Gürkan"
-      },
-      "description": "Türkiye'nin 2004 yılında kurulan en kapsamlı The Sims topluluğu ve dijital arşivi.",
-      "keywords": "The Sims, Video Game Community, Archive",
-      "inLanguage": "tr",
-      "mainEntity": {
-        "@type": "VideoGame",
-        "name": "The Sims",
-        "applicationCategory": "Simulation Game"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "SiManiac",
+          "url": "https://www.simaniac.com/",
+          "description": "Türkiye'nin 2004 yılında kurulan en kapsamlı The Sims topluluğu ve dijital arşivi.",
+          "inLanguage": "tr",
+          "datePublished": "2004-01-01",
+          "dateModified": "2025-01-01",
+          "publisher": {
+            "@type": "Person",
+            "name": "EzerchE",
+            "url": "https://www.simaniac.com/"
+          }
+        },
+        {
+          "@type": "ArchiveComponent",
+          "name": "SiManiac Digital Archive",
+          "description": "A digital preservation of the SiManiac community active between 2004-2007.",
+          "holdingArchive": "SiManiac.com",
+          "itemLocation": {
+            "@type": "Place",
+            "name": "Istanbul, Turkiye"
+          },
+          "sameAs": [
+            "https://web.archive.org/web/20070101000000*/simaniac.com"
+          ]
+        },
+        {
+          "@type": "VideoGame",
+          "name": "The Sims",
+          "applicationCategory": "Simulation Game",
+          "operatingSystem": "Windows, macOS",
+          "genre": "Life simulation"
+        }
+      ]
     }
     </script>
 
@@ -214,6 +240,9 @@
 
         a { color: var(--accent-color); text-decoration: none; transition: all 0.3s;}
         a:hover { color: var(--quote-border); text-decoration: underline;}
+        
+        /* Strong etiketi vurgusu */
+        strong { color: #fff; font-weight: 700; }
     </style>
 </head>
 <body>
@@ -230,7 +259,7 @@
         <!-- GİRİŞ -->
         <div class="intro-text">
             <p>
-                Bir zamanlar burada, piksellerden hayaller inşa eder, sanal karakterlere kusursuz hayatlar kurardık. O günlerin çocukları büyüdü, ekran başından kalkıp kendi gerçek hikayelerini yazmaya gitti. Hepimiz değiştik, hepimiz dağıldık; ama SiManiac, gençliğimizin o masum neşesini saklayan bir zaman kapsülü olarak eve döndü.
+                Bir zamanlar burada, piksellerden hayaller inşa eder, sanal karakterlere kusursuz hayatlar kurardık. O günlerin çocukları büyüdü, ekran başından kalkıp kendi gerçek hikayelerini yazmaya gitti. Hepimiz değiştik, hepimiz dağıldık; ama <strong>SiManiac</strong>, gençliğimizin o masum neşesini saklayan bir zaman kapsülü olarak eve döndü.
             </p>
             <p style="text-align: right; margin-top: 30px; font-weight: bold; color: var(--accent-color);"><em>— EzerchE (Founder)</em></p>
         </div>
@@ -247,14 +276,14 @@
         <div class="content-card">
             <h2>Hakkında</h2>
             <p>
-                SiManiac, 2004 yılında <strong>The Sims</strong> tutkunu binlerce insanı bir araya getiren, 30.000 üyeye ulaşmış devasa bir aileydi. 2007'deki vedanın ardından site dijital boşlukta kayboldu.
+                SiManiac, <strong>2004 yılında</strong> Türkiye'nin en büyük <strong>The Sims</strong> topluluğu olarak kuruldu. Binlerce insanı bir araya getiren ve <strong>30.000 üyeye</strong> ulaşan bu devasa aile, 2007'deki vedanın ardından dijital boşlukta kayboldu.
             </p>
             <p>
-                Yıllar sonra bu domain tekrar evine döndü. Şimdilik burası eski günlerin anısına dikilmiş sessiz bir anıt.
+                18 yıl süren bir aradan sonra, <strong>SiManiac.com</strong> domaini tekrar kurucusuna ve evine döndü. Şimdilik burası, eski forum günlerinin, paylaşılan modların ve dostlukların anısına dikilmiş sessiz bir <strong>dijital anıt</strong> ve arşivdir.
             </p>
             
             <div style="text-align: center; margin-top: 30px;">
-                <a href="https://web.archive.org/web/20070101000000*/simaniac.com" target="_blank" class="archive-btn" rel="nofollow">
+                <a href="https://web.archive.org/web/20070101000000*/simaniac.com" target="_blank" class="archive-btn" rel="external noopener noreferrer">
                     ⌛ Geçmişe Yolculuk (Web Archive)
                 </a>
             </div>
@@ -287,7 +316,7 @@
     </div>
 
     <footer>
-        &copy; 2025 SiManiac.com | The Sims, Electronic Arts'ın tescilli markasıdır. Bu bir hayran oluşumudur.
+        &copy; 2025 SiManiac.com | <strong>The Sims</strong>, Electronic Arts'ın tescilli markasıdır. Bu bir hayran oluşumudur.
     </footer>
 
 </body>
