@@ -48,12 +48,13 @@
             color: #fff;
             font-weight: 800;
             display: inline-flex;
-            align-items: center;
+            /* ÖNEMLİ DEĞİŞİKLİK: Harfleri taban çizgisinden hizalar */
+            align-items: baseline; 
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        /* --- LOGO CSS (Plumbob 'i') - HİZALAMA DÜZELTİLDİ --- */
+        /* --- LOGO CSS (Plumbob 'i') --- */
         .custom-i {
             display: inline-flex;
             flex-direction: column;
@@ -61,8 +62,8 @@
             justify-content: flex-end;
             position: relative;
             margin: 0 -0.02em;
-            /* Aşağıdaki değer harfi yukarı kaldırır */
-            top: -0.08em; 
+            /* DEĞİŞİKLİK: Harfi daha yukarı kaldırmak için değer artırıldı */
+            top: -0.25em; 
         }
 
         .i-stem {
@@ -73,7 +74,6 @@
         .plumbob-dot {
             width: 0.45em;
             height: 0.7em;
-            /* Nokta ile gövde arası boşluk biraz azaltıldı */
             margin-bottom: 0.1em;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100'%3E%3Cpath d='M25 0 L50 50 L25 100 L0 50 Z' fill='%2338bdf8' /%3E%3C/svg%3E");
             background-size: contain;
@@ -92,7 +92,8 @@
             margin-left: 15px;
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
             position: relative;
-            top: -0.1em;
+            /* Badge hizalaması */
+            top: -0.5em; 
         }
 
         /* METİN STİLLERİ */
