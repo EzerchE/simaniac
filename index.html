@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- UX: Mobil Tarayıcı Çubuğu Rengi (App Hissi Verir) -->
+    <meta name="theme-color" content="#0f172a">
+    
     <!-- SEO: Ana Başlık (Marka + Otorite + Tarih) -->
     <title>SiManiac - The Sims Türkiye Arşivi ve Topluluğu (2004-2025)</title>
     
@@ -20,22 +23,23 @@
     <!-- SEO: Kritik İzinler (Google Botları İçin Tam Erişim) -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
-    <!-- SEO: Otoriteyi Belirle (Canonical - GSC Hatasını Çözer) -->
+    <!-- SEO: Otoriteyi Belirle (Canonical) -->
     <link rel="canonical" href="https://www.simaniac.com/">
     
-    <!-- SOCIAL: Open Graph (Görsel Paylaşım Sinyalleri) -->
+    <!-- SOCIAL: Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.simaniac.com/">
     <meta property="og:title" content="SiManiac - The Sims Efsanesi Eve Döndü">
     <meta property="og:description" content="2004'te kurulan efsanevi Sims topluluğu SiManiac, 18 yıl sonra dijital bir anıt olarak yayında.">
     <meta property="og:site_name" content="SiManiac Archive">
     <meta property="og:locale" content="tr_TR">
+    
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SiManiac Geri Döndü">
     <meta name="twitter:description" content="Türkiye'nin en köklü The Sims topluluğu SiManiac.com, dijital arşiv olarak yayında.">
 
-    <!-- SCHEMA.ORG: Gelişmiş Yapısal Veri (Google'a Güven Sinyali) -->
+    <!-- SCHEMA.ORG: Gelişmiş Yapısal Veri -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -148,7 +152,10 @@
             height: 0.7em;
             left: 50%;
             transform: translateX(-50%);
-            margin-left: 0.01em;
+            
+            /* DÜZELTME: 0.01em yerine 0.02em sağa kaydırıldı */
+            margin-left: 0.02em;
+            
             bottom: 100%; 
             margin-bottom: -0.65em; 
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100'%3E%3Cpath d='M25 0 L50 50 L25 100 L0 50 Z' fill='%2338bdf8' /%3E%3C/svg%3E");
@@ -157,6 +164,16 @@
             background-position: center center;
             filter: drop-shadow(0 0 8px var(--accent-color));
             pointer-events: none;
+        }
+
+        /* RESPONSIVE: Mobil uyumluluk için güvenli font boyutu */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem; /* Mobilde taşmayı önler */
+            }
+            .container {
+                padding: 40px 20px;
+            }
         }
 
         .intro-text {
@@ -241,7 +258,6 @@
         a { color: var(--accent-color); text-decoration: none; transition: all 0.3s;}
         a:hover { color: var(--quote-border); text-decoration: underline;}
         
-        /* Strong etiketi vurgusu */
         strong { color: #fff; font-weight: 700; }
     </style>
 </head>
@@ -249,9 +265,9 @@
 
     <div class="container">
         <header>
-            <h1>
-                <!-- HTML Logo: Semantic olarak h1 olduğu için Google bunu "SiManiac" olarak okur -->
-                S<span class="custom-i"><span class="plumbob-dot"></span><span class="i-stem">&#305;</span></span>Maniac
+            <!-- A11Y: aria-label ile ekran okuyuculara doğru okuma garantisi -->
+            <h1 aria-label="SiManiac">
+                S<span class="custom-i" aria-hidden="true"><span class="plumbob-dot"></span><span class="i-stem">&#305;</span></span>Maniac
             </h1>
             <p style="opacity: 0.7; margin-top: 15px; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">EST. 2004</p>
         </header>
