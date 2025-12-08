@@ -3,10 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiManiac.com | 2004 - ∞</title>
-    <meta name="description" content="SiManiac.com - Bir zamanların efsanevi The Sims topluluğu. Dijital bir anı defteri.">
+    
+    <!-- SEO: Ana Başlık (Brand + Anahtar Kelime) -->
+    <title>SiManiac - Türkiye'nin Efsanevi The Sims Topluluğu ve Arşivi (2004)</title>
+    
+    <!-- SEO: Açıklama (Google'da başlığın altında çıkan yazı) -->
+    <meta name="description" content="2004 yılında kurulan Türkiye'nin en büyük The Sims platformu SiManiac, 18 yıl sonra orijinal kurucusu tarafından dijital bir anıt ve arşiv olarak geri döndü. Sims tarihi, nostalji ve topluluk.">
+    
+    <!-- SEO: Anahtar Kelimeler (Google az kullanır ama diğer botlar için iyidir) -->
+    <meta name="keywords" content="Simaniac, The Sims, Sims Türkiye, Simaniac Arşiv, Sims Forum, EzerchE, Sims 2, Sims Tarihi, Nostalji">
+    
+    <!-- SEO: Robotlara İzin Ver (Kritik: Domain geçmişi kötü olduğu için bu komut şart) -->
+    <meta name="robots" content="index, follow">
+    
+    <!-- SEO: Otoriteyi Belirle (Canonical) -->
+    <link rel="canonical" href="https://www.simaniac.com/">
+    
+    <!-- SOCIAL: Open Graph (Twitter/Facebook/WhatsApp paylaşım önizlemeleri) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.simaniac.com/">
+    <meta property="og:title" content="SiManiac - The Sims Efsanesi Eve Döndü">
+    <meta property="og:description" content="2004'te kurulan efsanevi Sims topluluğu SiManiac, 18 yıl sonra dijital bir anıt olarak yayında.">
+    <meta property="og:site_name" content="SiManiac Archive">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- SCHEMA.ORG: Google'a Sitenin Kimliğini Anlatan Yapısal Veri -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SiManiac",
+      "alternateName": ["SiManiac Türkiye", "Simaniac Archive"],
+      "url": "https://www.simaniac.com/",
+      "foundingDate": "2004",
+      "founder": {
+        "@type": "Person",
+        "name": "EzerchE",
+        "alternateName": "Gürkan"
+      },
+      "description": "Türkiye'nin 2004 yılında kurulan en kapsamlı The Sims topluluğu ve dijital arşivi.",
+      "keywords": "The Sims, Video Game Community, Archive",
+      "inLanguage": "tr",
+      "mainEntity": {
+        "@type": "VideoGame",
+        "name": "The Sims",
+        "applicationCategory": "Simulation Game"
+      }
+    }
+    </script>
+
     <!-- SIMS FAVICON (Mavi Renk) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M50 2 L85 50 L50 98 L15 50 Z%22 fill=%22%2338bdf8%22 stroke=%22%230f172a%22 stroke-width=%222%22/></svg>">
+    
     <style>
         :root {
             --bg-color: #0f172a;
@@ -46,7 +94,6 @@
         h1 {
             font-size: 3.5rem;
             margin: 0;
-            /* Genel harf sıkılaştırma */
             letter-spacing: -2px;
             color: #fff;
             font-weight: 800;
@@ -55,17 +102,13 @@
             word-spacing: normal;
         }
 
-        /* Harfi saran kapsayıcı */
         .custom-i {
             display: inline-block; 
             position: relative;
-            
-            /* BOŞLUK DÜZELTMESİ: */
             margin-left: 0.04em; 
             margin-right: 0.01em;
         }
 
-        /* Harfin Gövdesi (ı) */
         .i-stem {
             font-style: normal;
             line-height: 1;
@@ -73,21 +116,15 @@
             vertical-align: baseline; 
         }
 
-        /* Simge (Plumbob Noktası) */
         .plumbob-dot {
             position: absolute;
             width: 0.45em;
             height: 0.7em;
-            
             left: 50%;
             transform: translateX(-50%);
-            
-            /* HİZALAMA AYARI (MİKROSKOPİK): 0.01em sağa kaydırıldı */
             margin-left: 0.01em;
-
             bottom: 100%; 
-            margin-bottom: -0.65em; /* Gövdeye yakınlık sabit */
-
+            margin-bottom: -0.65em; 
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100'%3E%3Cpath d='M25 0 L50 50 L25 100 L0 50 Z' fill='%2338bdf8' /%3E%3C/svg%3E");
             background-size: contain;
             background-repeat: no-repeat;
@@ -95,10 +132,6 @@
             filter: drop-shadow(0 0 8px var(--accent-color));
             pointer-events: none;
         }
-
-        /* Badge CSS'i kaldırıldı */
-
-        /* -------------------------------- */
 
         .intro-text {
             font-size: 1.2rem;
@@ -188,7 +221,7 @@
     <div class="container">
         <header>
             <h1>
-                <!-- HTML içinde boşluk olmamasına dikkat ediyoruz -->
+                <!-- HTML Logo: Semantic olarak h1 olduğu için Google bunu "SiManiac" olarak okur -->
                 S<span class="custom-i"><span class="plumbob-dot"></span><span class="i-stem">&#305;</span></span>Maniac
             </h1>
             <p style="opacity: 0.7; margin-top: 15px; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">EST. 2004</p>
@@ -214,14 +247,14 @@
         <div class="content-card">
             <h2>Hakkında</h2>
             <p>
-                SiManiac, 2004 yılında The Sims tutkunu binlerce insanı bir araya getiren, 30.000 üyeye ulaşmış devasa bir aileydi. 2007'deki vedanın ardından site dijital boşlukta kayboldu.
+                SiManiac, 2004 yılında <strong>The Sims</strong> tutkunu binlerce insanı bir araya getiren, 30.000 üyeye ulaşmış devasa bir aileydi. 2007'deki vedanın ardından site dijital boşlukta kayboldu.
             </p>
             <p>
                 Yıllar sonra bu domain tekrar evine döndü. Şimdilik burası eski günlerin anısına dikilmiş sessiz bir anıt.
             </p>
             
             <div style="text-align: center; margin-top: 30px;">
-                <a href="https://web.archive.org/web/20070101000000*/simaniac.com" target="_blank" class="archive-btn">
+                <a href="https://web.archive.org/web/20070101000000*/simaniac.com" target="_blank" class="archive-btn" rel="nofollow">
                     ⌛ Geçmişe Yolculuk (Web Archive)
                 </a>
             </div>
@@ -243,7 +276,7 @@
                 
                 (function() { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
-                    /* --- BURAYA DISQUS SHORTNAME GELECEK --- */
+                    /* --- DISQUS SHORTNAME: Kendi shortname'in ile değiştir --- */
                     s.src = 'https://simaniac.disqus.com/embed.js'; 
                     s.setAttribute('data-timestamp', +new Date());
                     (d.head || d.body).appendChild(s);
