@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SiManiac.com | 2004 - ∞</title>
     <meta name="description" content="SiManiac.com - Bir zamanların efsanevi The Sims topluluğu. Dijital bir anı defteri.">
+    <!-- SIMS FAVICON (Mavi Renk) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M50 2 L85 50 L50 98 L15 50 Z%22 fill=%22%2338bdf8%22 stroke=%22%230f172a%22 stroke-width=%222%22/></svg>">
     <style>
         :root {
@@ -41,54 +42,60 @@
             padding-bottom: 40px;
         }
 
-        /* --- YENİ LOGO CSS YAPISI (DÜZELTİLMİŞ) --- */
+        /* --- LOGO / BAŞLIK DÜZENİ --- */
         h1 {
             font-size: 3.5rem;
             margin: 0;
+            /* Genel harf sıkılaştırma */
             letter-spacing: -2px;
             color: #fff;
             font-weight: 800;
-            /* Flex kaldırıldı, standart metin hizalamasına dönüldü */
-            text-align: center; 
+            text-align: center;
             position: relative;
+            word-spacing: normal;
         }
 
+        /* Harfi saran kapsayıcı */
         .custom-i {
-            /* Harfi metin akışı içinde bir blok gibi tutar */
             display: inline-block; 
             position: relative;
-            /* Harfler arası boşluk ayarı */
-            margin: 0 -0.03em; 
+            
+            /* BOŞLUK DÜZELTMESİ: */
+            /* Kullanıcı isteği üzerine 0.05em -> 0.04em yapıldı */
+            margin-left: 0.04em; 
+            margin-right: 0.01em;
         }
 
+        /* Harfin Gövdesi (ı) */
         .i-stem {
             font-style: normal;
             line-height: 1;
-            /* Gövdenin diğer harflerle tam baseline'da oturmasını sağlar */
+            display: inline-block;
             vertical-align: baseline; 
         }
 
+        /* Simge (Plumbob Noktası) */
         .plumbob-dot {
-            /* Noktayı gövdeden bağımsız konumlandırır */
             position: absolute;
-            /* Yatay ortalama */
-            left: 50%;
-            transform: translateX(-50%);
-            /* Dikey konum: Gövdenin tam üstüne */
-            bottom: 100%; 
-            margin-bottom: 0.12em; /* Gövde ile arasındaki ince boşluk */
-            
             width: 0.45em;
             height: 0.7em;
+            
+            left: 50%;
+            transform: translateX(-50%);
+            
+            bottom: 100%; 
+            margin-bottom: -0.65em; /* Gövdeye yakınlık sabit */
+
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100'%3E%3Cpath d='M25 0 L50 50 L25 100 L0 50 Z' fill='%2338bdf8' /%3E%3C/svg%3E");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
             filter: drop-shadow(0 0 8px var(--accent-color));
+            pointer-events: none;
         }
 
         .badge {
-            display: inline-block; /* Badge'in de düzgün hizalanması için */
+            display: inline-block;
             background: linear-gradient(45deg, var(--accent-color), var(--quote-border));
             color: #0f172a;
             padding: 4px 12px;
@@ -97,13 +104,12 @@
             font-weight: bold;
             margin-left: 15px;
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
-            vertical-align: middle; /* Dikeyde ortalar */
+            vertical-align: middle;
             position: relative;
-            top: -2px; /* İnce ayar */
+            top: -10px;
         }
-        /* ----------------------------------------- */
+        /* -------------------------------- */
 
-        /* METİN STİLLERİ */
         .intro-text {
             font-size: 1.2rem;
             color: #cbd5e1;
@@ -192,15 +198,14 @@
     <div class="container">
         <header>
             <h1>
-                S<span class="custom-i">
-                    <span class="plumbob-dot"></span>
-                    <span class="i-stem">&#305;</span>
-                </span>Maniac
+                <!-- HTML içinde boşluk olmamasına dikkat ediyoruz -->
+                S<span class="custom-i"><span class="plumbob-dot"></span><span class="i-stem">&#305;</span></span>Maniac
                 <span class="badge">Archive</span>
             </h1>
             <p style="opacity: 0.7; margin-top: 15px; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">EST. 2004</p>
         </header>
 
+        <!-- GİRİŞ -->
         <div class="intro-text">
             <p>
                 Bir zamanlar burada, piksellerden hayaller inşa eder, sanal karakterlere kusursuz hayatlar kurardık. O günlerin çocukları büyüdü, ekran başından kalkıp kendi gerçek hikayelerini yazmaya gitti. Hepimiz değiştik, hepimiz dağıldık; ama SiManiac, gençliğimizin o masum neşesini saklayan bir zaman kapsülü olarak eve döndü.
@@ -208,6 +213,7 @@
             <p style="text-align: right; margin-top: 30px; font-weight: bold; color: var(--accent-color);"><em>— EzerchE (Founder)</em></p>
         </div>
 
+        <!-- ALINTI -->
         <div class="quote-box">
             <span class="quote-text">
                 "If you have built castles in the air, your work need not be lost; that is where they should be. Now put the foundations under them."
@@ -215,6 +221,7 @@
             <span class="quote-author">— Henry David Thoreau, Walden or, Life in the Woods</span>
         </div>
 
+        <!-- HAKKINDA -->
         <div class="content-card">
             <h2>Hakkında</h2>
             <p>
@@ -231,6 +238,7 @@
             </div>
         </div>
 
+        <!-- ANI DEFTERİ -->
         <div class="content-card" id="guestbook">
             <h2>Anı Defteri</h2>
             <p style="font-size: 1rem; opacity: 0.8; margin-bottom: 30px;">
@@ -246,6 +254,7 @@
                 
                 (function() { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
+                    /* --- BURAYA DISQUS SHORTNAME GELECEK --- */
                     s.src = 'https://simaniac.disqus.com/embed.js'; 
                     s.setAttribute('data-timestamp', +new Date());
                     (d.head || d.body).appendChild(s);
