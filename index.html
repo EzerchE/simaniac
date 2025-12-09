@@ -2,7 +2,8 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- PERFORMANS: interactive-widget ile CLS (Kayma) önlenir -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
     
     <!-- UX: Mobil Tarayıcı Çubuğu Rengi -->
     <meta name="theme-color" content="#0f172a">
@@ -78,6 +79,7 @@
             --quote-border: #818cf8;
         }
 
+        /* Performans: content-visibility ile tarayıcı yükünü azalt */
         body {
             font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
             background-color: var(--bg-color);
@@ -130,7 +132,7 @@
             vertical-align: baseline; 
         }
 
-        /* --- PLUMBOB (GARANTİ ÇÖZÜM: SVG + FLOAT ANIMASYONU) --- */
+        /* --- STABİL VE TEMİZ SVG PLUMBOB --- */
         .plumbob-dot {
             position: absolute;
             width: 0.45em;
@@ -154,8 +156,9 @@
             filter: drop-shadow(0 0 8px var(--accent-color));
             pointer-events: none;
 
-            /* Canlılık Animasyonu */
+            /* Canlılık Animasyonu (Sadece yukarı aşağı süzülme) */
             animation: float 3s ease-in-out infinite;
+            will-change: transform; /* Performans İyileştirmesi */
         }
 
         /* Süzülme Animasyonu (Nefes Alma Efekti) */
@@ -213,6 +216,10 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             margin-bottom: 50px;
             border: 1px solid #334155;
+            
+            /* Performans: Ekran dışında kalanları render etme */
+            content-visibility: auto; 
+            contain-intrinsic-size: 1px 300px;
         }
 
         h2 {
@@ -248,12 +255,22 @@
             font-size: 0.9rem;
             opacity: 0.6;
             border-top: 1px solid #334155;
+            content-visibility: auto;
         }
 
         a { color: var(--accent-color); text-decoration: none; transition: all 0.3s;}
         a:hover { color: var(--quote-border); text-decoration: underline;}
         
         strong { color: #fff; font-weight: 700; }
+        
+        /* Loading placeholder for comments */
+        .comments-placeholder {
+            padding: 20px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -310,31 +327,43 @@
                 Eskiden buralarda mıydın? Bir not bırak, belki eski bir dostunla karşılaşırsın.
             </p>
             
-            <div id="disqus_thread"></div>
-            <!-- Script Hatasını Önleyen Hata Yönetimi -->
+            <!-- Lazy Load için Placeholder -->
+            <div id="disqus_thread">
+                <div class="comments-placeholder">Yorumlar yükleniyor...</div>
+            </div>
+
+            <!-- PageSpeed Optimizasyonu: Lazy Load Script -->
             <script>
+                // Disqus konfigürasyonu
                 var disqus_config = function () {
                     this.page.url = "https://simaniac.com";  
                     this.page.identifier = "simaniac-archive-home"; 
                 };
-                
-                (function() { 
-                    // Ortam Kontrolü
-                    if (["localhost", "127.0.0.1", ""].indexOf(window.location.hostname) !== -1 || window.location.protocol === 'file:') {
-                        document.getElementById('disqus_thread').innerHTML = '<div style="padding: 15px; color: #94a3b8; text-align: center; border: 1px dashed #475569; border-radius: 8px; font-size: 0.9rem;">Yorumlar canlı sitede (simaniac.com) görüntülenecektir.</div>';
-                        return;
-                    }
 
-                    try {
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://simaniac.disqus.com/embed.js'; 
-                        s.setAttribute('data-timestamp', +new Date());
-                        s.onerror = function() { console.warn('Disqus scripti yüklenemedi. Bu bir hata değildir.'); };
-                        (d.head || d.body).appendChild(s);
-                    } catch (e) {
-                        console.log('Disqus yükleme hatası:', e);
-                    }
-                })();
+                // Intersection Observer ile "Görünce Yükle" mantığı
+                document.addEventListener("DOMContentLoaded", function() {
+                    var disqus_observer = new IntersectionObserver(function(entries) {
+                        if(entries[0].isIntersecting) {
+                            (function() {
+                                // Ortam Kontrolü
+                                if (["localhost", "127.0.0.1", ""].indexOf(window.location.hostname) !== -1 || window.location.protocol === 'file:') {
+                                    document.getElementById('disqus_thread').innerHTML = '<div style="padding: 15px; color: #94a3b8; text-align: center; border: 1px dashed #475569; border-radius: 8px; font-size: 0.9rem;">Yorumlar canlı sitede (simaniac.com) görüntülenecektir.</div>';
+                                    return;
+                                }
+
+                                var d = document, s = d.createElement('script');
+                                s.src = 'https://simaniac.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                            
+                            // Bir kere yüklendikten sonra izlemeyi bırak
+                            disqus_observer.disconnect();
+                        }
+                    }, { threshold: [0] }); // %0 görünür olduğunda tetikle
+
+                    disqus_observer.observe(document.querySelector("#disqus_thread"));
+                });
             </script>
             <noscript>Yorumları görmek için JavaScript'i etkinleştirin.</noscript>
         </div>
