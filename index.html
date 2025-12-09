@@ -4,47 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- UX: Mobil Tarayıcı Çubuğu Rengi (App Hissi Verir) -->
+    <!-- UX: Mobil Tarayıcı Çubuğu Rengi -->
     <meta name="theme-color" content="#0f172a">
     
-    <!-- SEO: Ana Başlık (Marka + Otorite + Tarih) -->
-    <title>SiManiac - The Sims (2004-∞)</title>
-    
-    <!-- SEO: Gelişmiş Açıklama (CTR Odaklı) -->
+    <!-- SEO: Meta Etiketleri -->
+    <title>SiManiac - The Sims Türkiye Arşivi ve Topluluğu (2004-2025)</title>
     <meta name="description" content="2004 yılında kurulan Türkiye'nin efsanevi The Sims platformu SiManiac, 18 yıl sonra dijital bir müze ve arşiv olarak geri döndü.">
-    
-    <!-- SEO: Genişletilmiş Anahtar Kelimeler -->
     <meta name="keywords" content="Simaniac, The Sims, Sims Türkiye, Sims Forum, EzerchE, Sims 2, Sims 3, Sims 4, Project Rene">
-    
-    <!-- SEO: Yazar ve Sahiplik -->
-    <meta name="author" content="Gürkan 'EzerchE'">
+    <meta name="author" content="EzerchE">
     <meta name="copyright" content="SiManiac The Sims">
-    
-    <!-- SEO: Kritik İzinler (Google Botları İçin Tam Erişim) -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    
-    <!-- SEO: Otoriteyi Belirle (Canonical) -->
     <link rel="canonical" href="https://www.simaniac.com/">
     
-    <!-- SOCIAL: Open Graph (WhatsApp, Facebook, LinkedIn Önizlemesi) -->
+    <!-- SOCIAL: Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.simaniac.com/">
     <meta property="og:title" content="SiManiac - The Sims Efsanesi Eve Döndü">
     <meta property="og:description" content="2004'te kurulan efsanevi Sims topluluğu SiManiac, 18 yıl sonra dijital bir anıt olarak yayında.">
     <meta property="og:site_name" content="SiManiac The Sims">
     <meta property="og:locale" content="tr_TR">
-    <!-- ÖNEMLİ: Bu resmi GitHub'a yüklemelisin -->
     <meta property="og:image" content="https://www.simaniac.com/social-share.jpg">
     <meta property="og:image:alt" content="SiManiac Logo ve Arşiv Görüntüsü">
     
-    <!-- Twitter Card (Twitter Paylaşım Önizlemesi) -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SiManiac Geri Döndü">
     <meta name="twitter:description" content="Türkiye'nin en köklü The Sims topluluğu SiManiac.com, dijital arşiv olarak yayında.">
-    <!-- ÖNEMLİ: Bu resmi GitHub'a yüklemelisin -->
     <meta name="twitter:image" content="https://www.simaniac.com/social-share.jpg">
 
-    <!-- SCHEMA.ORG: Gelişmiş Yapısal Veri -->
+    <!-- SCHEMA.ORG -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -57,24 +45,15 @@
           "inLanguage": "tr",
           "datePublished": "2004-01-01",
           "dateModified": "2025-01-01",
-          "publisher": {
-            "@type": "Person",
-            "name": "EzerchE",
-            "url": "https://www.simaniac.com/"
-          }
+          "publisher": { "@type": "Person", "name": "EzerchE", "url": "https://www.simaniac.com/" }
         },
         {
           "@type": "ArchiveComponent",
           "name": "SiManiac Digital Archive",
           "description": "A digital preservation of the SiManiac community active between 2004-2007.",
           "holdingArchive": "SiManiac.com",
-          "itemLocation": {
-            "@type": "Place",
-            "name": "Istanbul, Turkiye"
-          },
-          "sameAs": [
-            "https://web.archive.org/web/20070101000000*/simaniac.com"
-          ]
+          "itemLocation": { "@type": "Place", "name": "Istanbul, Turkiye" },
+          "sameAs": [ "https://web.archive.org/web/20070101000000*/simaniac.com" ]
         },
         {
           "@type": "VideoGame",
@@ -87,8 +66,9 @@
     }
     </script>
 
-    <!-- SIMS FAVICON (Mavi Renk) -->
+    <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
     <style>
         :root {
             --bg-color: #0f172a;
@@ -150,34 +130,45 @@
             vertical-align: baseline; 
         }
 
+        /* --- PLUMBOB (GARANTİ ÇÖZÜM: SVG + FLOAT ANIMASYONU) --- */
         .plumbob-dot {
             position: absolute;
             width: 0.45em;
             height: 0.7em;
-            left: 50%;
-            transform: translateX(-50%);
             
-            /* DÜZELTME: 0.01em yerine 0.02em sağa kaydırıldı */
-            margin-left: 0.02em;
+            /* Konumlandırma */
+            left: 50%;
+            /* Not: translateX animasyon içinde yönetiliyor */
             
             bottom: 100%; 
-            margin-bottom: -0.65em; 
+            margin-bottom: -0.60em; /* Gövdeye yakınlık */
+            margin-left: 0.02em;    /* İnce ayar */
+
+            /* Görsel */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100'%3E%3Cpath d='M25 0 L50 50 L25 100 L0 50 Z' fill='%2338bdf8' /%3E%3C/svg%3E");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
+            
+            /* Parlama Efekti */
             filter: drop-shadow(0 0 8px var(--accent-color));
             pointer-events: none;
+
+            /* Canlılık Animasyonu */
+            animation: float 3s ease-in-out infinite;
         }
 
-        /* RESPONSIVE: Mobil uyumluluk için güvenli font boyutu */
+        /* Süzülme Animasyonu (Nefes Alma Efekti) */
+        @keyframes float {
+            0% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-5px); } /* 5px yukarı süzülür */
+            100% { transform: translateX(-50%) translateY(0); }
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 600px) {
-            h1 {
-                font-size: 2.5rem; /* Mobilde taşmayı önler */
-            }
-            .container {
-                padding: 40px 20px;
-            }
+            h1 { font-size: 2.5rem; }
+            .container { padding: 40px 20px; }
         }
 
         .intro-text {
@@ -269,9 +260,12 @@
 
     <div class="container">
         <header>
-            <!-- A11Y: aria-label ile ekran okuyuculara doğru okuma garantisi -->
             <h1 aria-label="SiManiac">
-                S<span class="custom-i" aria-hidden="true"><span class="plumbob-dot"></span><span class="i-stem">&#305;</span></span>Maniac
+                S<span class="custom-i" aria-hidden="true">
+                    <!-- Sağlam SVG Yapısına Dönüldü -->
+                    <span class="plumbob-dot"></span>
+                    <span class="i-stem">&#305;</span>
+                </span>Maniac
             </h1>
             <p style="opacity: 0.7; margin-top: 15px; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">EST. 2004</p>
         </header>
@@ -317,18 +311,29 @@
             </p>
             
             <div id="disqus_thread"></div>
+            <!-- Script Hatasını Önleyen Hata Yönetimi -->
             <script>
                 var disqus_config = function () {
                     this.page.url = "https://simaniac.com";  
                     this.page.identifier = "simaniac-archive-home"; 
                 };
                 
-                (function() { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    /* --- DISQUS SHORTNAME: Kendi shortname'in ile değiştir --- */
-                    s.src = 'https://simaniac.disqus.com/embed.js'; 
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
+                (function() { 
+                    // Ortam Kontrolü
+                    if (["localhost", "127.0.0.1", ""].indexOf(window.location.hostname) !== -1 || window.location.protocol === 'file:') {
+                        document.getElementById('disqus_thread').innerHTML = '<div style="padding: 15px; color: #94a3b8; text-align: center; border: 1px dashed #475569; border-radius: 8px; font-size: 0.9rem;">Yorumlar canlı sitede (simaniac.com) görüntülenecektir.</div>';
+                        return;
+                    }
+
+                    try {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://simaniac.disqus.com/embed.js'; 
+                        s.setAttribute('data-timestamp', +new Date());
+                        s.onerror = function() { console.warn('Disqus scripti yüklenemedi. Bu bir hata değildir.'); };
+                        (d.head || d.body).appendChild(s);
+                    } catch (e) {
+                        console.log('Disqus yükleme hatası:', e);
+                    }
                 })();
             </script>
             <noscript>Yorumları görmek için JavaScript'i etkinleştirin.</noscript>
