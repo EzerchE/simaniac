@@ -2,6 +2,7 @@ User-agent: *
 Allow: /$
 Allow: /index.html
 Allow: /favicon.svg
+Allow: /favicon.ico
 Allow: /sitemap.xml
 Allow: /social-share.jpg
 
@@ -10,5 +11,8 @@ Disallow: /board/
 Disallow: /member/
 Disallow: /search/
 Disallow: /archive/
+Disallow: /newslist/
+Disallow: /account/
+Disallow: /html/
 
-Sitemap: https://www.google.com/search?q=https://www.simaniac.com/sitemap.xml
+Sitemap: https://www.google.com/url?sa=E&source=gmail&q=https://www.simaniac.com/sitemap.xml
