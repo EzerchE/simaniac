@@ -1,4 +1,14 @@
 User-agent: *
-Allow: /
+Allow: /$
+Allow: /index.html
+Allow: /favicon.svg
+Allow: /sitemap.xml
+Allow: /social-share.jpg
+
+Disallow: /forum/
+Disallow: /board/
+Disallow: /member/
+Disallow: /search/
+Disallow: /archive/
 
 Sitemap: https://www.google.com/search?q=https://www.simaniac.com/sitemap.xml
