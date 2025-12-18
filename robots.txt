@@ -15,4 +15,4 @@ Disallow: /newslist/
 Disallow: /account/
 Disallow: /html/
 
-Sitemap: https://www.google.com/url?sa=E&source=gmail&q=https://www.simaniac.com/sitemap.xml
+Sitemap: https://www.simaniac.com/sitemap.xml
